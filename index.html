@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+        <h1>{{title1}}</h1>
+        <span>{{input1_title}}</span>
+        <input type="text" v-model="input1_data" >
+        <span>{{input2_title}} </span>
+        <input type="password" v-model="input2_data" @input="passCheck">
+            <div class="mitte">
+                <label>
+                    <input type="checkbox">
+                {{checkBox}}
+                </label>
+
+            <a>{{forgot}}</a>
+            </div>
+        
+        <button @click="sign">{{btn}}</button>
+        <span class="info" v-show="show" >{{info}}</span>
+        <span class="info_pass" :style="farbe" >{{info_pass}}</span>
+        
+        <div class="mediaLinks" v-show="show">
+            <span>{{linksTitle}}</span>
+            <div class="links">
+                <div class="face">
+                    <i class="fab fa-facebook-f"></i>
+                </div>
+                <div class="tw">
+                    <i class="fab fa-twitter"></i>
+                </div>
+                
+                
+                <div class="gg"><i class="fab fa-google"></i>
+                </div>
+            </div>
+            
+
+        </div>
+        
+            <div class="unten" v-show="SignUpShow">
+                <span class="untenSpan">{{member}}
+                    <a class="link" @click="signUp">{{member_link}}</a></span>
+                
+             </div>
+             
+
+             <select v-model="selected" @change="showLang">
+                <option disabled value="">----</option>
+                <option >English</option>
+                <option >Deutsch</option>
+                
+              </select>
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
